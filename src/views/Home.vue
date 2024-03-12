@@ -4,10 +4,13 @@
 </template>
 
 <script>
+import { useRoute } from 'vue-router'
+
 export default {
   setup () {
-    let arigamiController
+    const route = useRoute()
 
+    let arigamiController
     const arigamiStartWidget = async function (productCardToken) {
       if (!arigamiController) {
         arigamiController = window.arigami.init('modal', {})
@@ -15,6 +18,8 @@ export default {
       arigamiController.updateOptions({ productCardToken })
       arigamiController.start()
     }
+
+    if (route.query?.openWidget) arigamiStartWidget('c6eedd21-3077-4ecb-8533-2bdb0d659bb3')
 
     return { arigamiStartWidget }
   }

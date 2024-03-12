@@ -8,6 +8,7 @@ module.exports = {
   },
   pwa: {
     name: 'Valeriya-Artist',
+    startUrl: '/?openWidget=true',
     themeColor: '#000000',
     workboxOptions: {
       runtimeCaching: [{
