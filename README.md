@@ -1,4 +1,4 @@
-# valeriya.artist
+# arigami-pwa
 
 ## Project setup
 ```

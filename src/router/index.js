@@ -29,8 +29,8 @@ const router = createRouter({
   }
 })
 
-const DEFAULT_TITLE = 'Valeriya.Artist'
-const DEFAULT_DESCRIPTION = 'Valeriya.Artist'
+const DEFAULT_TITLE = 'arigami-pwa'
+const DEFAULT_DESCRIPTION = 'arigami-pwa'
 router.afterEach((to, from) => {
   nextTick(() => {
     document.title = to.meta.title || DEFAULT_TITLE
