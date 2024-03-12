@@ -7,12 +7,12 @@ module.exports = {
     }
   },
   pwa: {
-    name: 'Valeriya-Artist',
-    startUrl: '/?openWidget=true',
+    name: 'arigami-pwa',
+    startUrl: 'https://arigami-pwa-test-q1ls.vercel.app/?openWidget=true',
     themeColor: '#000000',
     workboxOptions: {
       runtimeCaching: [{
-        urlPattern: 'https://valeriya-artist.art/api',
+        urlPattern: 'https://api.arigami.tech/api',
         handler: 'CacheFirst'
       }]
     },

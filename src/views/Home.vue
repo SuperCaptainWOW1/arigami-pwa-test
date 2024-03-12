@@ -21,10 +21,7 @@ export default {
       arigamiController.start()
     }
 
-    console.log(route.query)
-
     if (route.query?.openWidget) {
-      console.log('open-widget')
       arigamiStartWidget('c6eedd21-3077-4ecb-8533-2bdb0d659bb3')
     }
 
