@@ -1,0 +1,64 @@
+// ***** FONTS *****
+@mixin font($label)
+  // ***** Desktop *****
+  @if $label == 'h1'
+    font-family: GolosTextWebDemiBold, serif
+    font-size: 10*$u
+    line-height: 15*$u
+
+  @if $label == 'h2'
+    font-family: GolosTextWebDemiBold, serif
+    font-size: 6*$u
+    line-height: 8.5*$u
+
+  @if $label == 'h3'
+    font-family: GolosTextWebDemiBold, serif
+    font-size: 5*$u
+    line-height: 7.5*$u
+
+  @if $label == 't18-demibold'
+    font-family: GolosTextWebMedium, serif
+    font-size: 4.5*$u
+    line-height: 7*$u
+
+  @if $label == 't18-regular'
+    font-family: GolosTextWebRegular, serif
+    font-size: 4.5*$u
+    line-height: 7*$u
+
+  @if $label == 't16-medium'
+    font-family: GolosTextWebMedium, serif
+    font-size: 4*$u
+    line-height: 6.5*$u
+
+  @if $label == 't16-regular'
+    font-family: GolosTextWebRegular, serif
+    font-size: 4*$u
+    line-height: 6.5*$u
+
+  @if $label == 't16-demibold'
+    font-family: GolosTextWebDemiBold, serif
+    font-size: 4*$u
+    line-height: 6.5*$u
+
+  @if $label == 't15-regular'
+    font-family: GolosTextWebRegular, serif
+    font-size: 3.75*$u
+    line-height: 5*$u
+
+  @if $label == 't14-regular'
+    font-family: GolosTextWebRegular, serif
+    font-size: 3.5*$u
+    line-height: 5*$u
+
+// ***** Heading *****
+@mixin heading
+  margin-bottom: 10*$u
+  text-transform: uppercase
+  color: $firstColor
+  text-align: center
+  @include font('h1')
+  @media screen and (max-width: $padWidth)
+    @include font('h2')
+  @media screen and (max-width: $mobileWidth)
+    @include font('h3')

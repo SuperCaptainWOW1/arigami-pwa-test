@@ -1,0 +1,117 @@
+@import "fonts"
+
+html
+  scrollbar-width: thin
+  scrollbar-color: $thumb $track
+  &::-webkit-scrollbar
+    width: 3*$u
+    height: 3*$u
+  &::-webkit-scrollbar-button
+    display: none
+  &::-webkit-scrollbar-track
+    background-color: $track
+  &::-webkit-scrollbar-thumb
+    background-color: $white
+    opacity: .5
+    transition: opacity .3s ease
+  &::-webkit-scrollbar-thumb:hover
+    opacity: 1
+
+body
+  font-family: $fontMain
+  font-weight: 500
+  font-style: normal
+  color: $white
+  overflow-x: hidden
+  min-height: 100vh
+  &.fixed
+    overflow: hidden
+  &::after
+    content: ''
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    position: fixed
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .8)), url('/public/img/bg.webp')
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: cover
+    z-index: -999
+  @media screen and (max-width: $XXXLWidth)
+    &::after
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .8)), url('/public/img/bgmobile.webp')
+
+.cont
+  max-width: $width
+  margin-left: auto
+  margin-right: auto
+  padding: 0 15*$u
+  @media screen and (max-width: $padWidth)
+    padding: 0 8*$u
+  @media screen and (max-width: $XSWidth)
+    padding: 0 5*$u
+  @media screen and (max-width: $XXSWidth)
+    padding: 0 3*$u
+
+div, button, input, textarea
+  box-sizing: border-box
+
+a
+  text-decoration: none
+  color: inherit
+  outline: none
+  &:focus
+    outline: none
+
+h1
+  @include heading
+
+.bold
+  font-weight: bold
+
+ul
+  padding-left: 5*$u
+  list-style: disc
+  li
+    color: $firstColor
+    span
+      color: $white
+
+.router-link-active, .router-link-exact-active
+  color: $firstColor
+
+.swiper-button-prev, .swiper-button-next
+  top: 0!important
+  margin-top: 0!important
+  width: 60px!important
+  height: 100%!important
+  display: flex!important
+  justify-content: center!important
+  align-items: center!important
+  position: relative
+  transition: .3s
+  &:hover
+    background: $BGOpacity
+  &::after
+    color: $white
+    content: '❯'!important
+    width: 40px
+    height: 40px
+    font-size: 40px!important
+    display: flex!important
+    justify-content: center!important
+    align-items: center!important
+.swiper-button-next
+  right: 0!important
+.swiper-button-prev
+  left: 0!important
+.swiper-button-prev::after
+  content: '❮'!important
+    
+.swiper-pagination-bullet
+  height: 5*$u!important
+  width: 5*$u!important
+  background: $btnBGDark!important
+.swiper-pagination-bullet-active
+  background: $btnBGDark!important
