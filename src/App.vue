@@ -2,7 +2,7 @@
 .content
   router-view
   .cont
-    ui-button(@click="install") установить приложение
+    ui-button(v-if="buttonVisible", @click="install") установить приложение
 </template>
 
 <script>
@@ -23,7 +23,7 @@ export default {
       console.log(1)
       deferredPrompt.value.prompt()
     }
-    return { install }
+    return { install, buttonVisible }
   }
 }
 </script>
