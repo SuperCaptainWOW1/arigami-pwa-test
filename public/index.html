@@ -19,7 +19,15 @@
         Please enable it to continue.</strong>
   </noscript>
   <div id="app"></div>
+  <button onclick="deferredPrompt.prompt()">Установить</button>
   <script src="https://widget.arigami.tech/v0/arigami.withdeps.umd.cjs"></script>
+  <script>
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+  </script>
   <% if(process.env.NODE_ENV==='production' ) { %>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">

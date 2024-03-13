@@ -1,11 +1,11 @@
 <template lang="pug">
 .content
   router-view
-  .cont
-    ui-button(v-if="buttonVisible", @click="install") установить приложение
+  //- .cont
+  //-   ui-button(v-if="buttonVisible", @click="install") установить приложение
 </template>
 
-<script>
+<!-- <script>
 import { ref } from 'vue'
 
 export default {
@@ -26,7 +26,7 @@ export default {
     return { install, buttonVisible }
   }
 }
-</script>
+</script> -->
 
 <style lang="sass">
 #app
