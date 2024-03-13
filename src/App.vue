@@ -1,9 +1,31 @@
 <template lang="pug">
 .content
   router-view
+  .cont
+    ui-button(@click="install") установить приложение
 </template>
 
 <script>
+import { ref } from 'vue'
+
+export default {
+  setup () {
+    const deferredPrompt = ref()
+    const buttonVisible = ref(false)
+    window.addEventListener('beforeinstallprompt', (e) => {
+      console.log(e)
+      e.preventDefault()
+      deferredPrompt.value = e
+      buttonVisible.value = true
+    })
+
+    const install = () => {
+      console.log(1)
+      deferredPrompt.value.prompt()
+    }
+    return { install }
+  }
+}
 </script>
 
 <style lang="sass">
